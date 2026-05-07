@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/)",
+      "Read(//c/Users/Victus/AppData/Local/Temp/claude/C--Users-Victus-Desktop-portfolio/50c47421-cce1-45bf-adc2-f04f6ff6ccc0/tasks/**)",
+      "WebFetch(domain:portfolio-five-roan-vwp6sipuxx.vercel.app)",
+      "PowerShell(New-Item -Path \"public\\\\images\" -ItemType Directory -Force)",
+      "PowerShell(\"dir created\")",
+      "PowerShell(Get-ChildItem public\\\\images | Select-Object Name, @{N='KB';E={[math]::Round\\($_.Length/1KB,1\\)}})",
+      "PowerShell(Get-ChildItem \"public\\\\images\" -ErrorAction SilentlyContinue | Format-List Name, Length; if \\(-not \\(Test-Path \"public\\\\images\\\\hiremind.jpg\"\\)\\) { \"files missing\" } else { \"files exist\" })"
+    ]
+  }
+}

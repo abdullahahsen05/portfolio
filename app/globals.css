@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0f1419;
+  --bg-elevated: #1a212c;
+  --bg-card: #151b24;
+  --accent-blue: #8ec5ff;
+  --accent-purple: #c4a3ff;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  background-color: var(--bg);
+  color: #eef0f4;
+  font-size: 17px;
+  line-height: 1.7;
+  font-feature-settings: "cv11", "ss01";
+}
+
+::selection {
+  background: rgba(142, 197, 255, 0.3);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0f1419;
+}
+::-webkit-scrollbar-thumb {
+  background: #2f394d;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3d4a64;
+}
+
+/* Hero gradient — softer, brighter glow */
+.hero-gradient {
+  background:
+    radial-gradient(70% 55% at 15% 0%, rgba(142, 197, 255, 0.18) 0%, transparent 60%),
+    radial-gradient(60% 50% at 85% 30%, rgba(196, 163, 255, 0.14) 0%, transparent 60%),
+    radial-gradient(50% 40% at 60% 100%, rgba(142, 197, 255, 0.08) 0%, transparent 70%);
+}
+
+/* Grid pattern */
+.grid-bg {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 30%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 30%, transparent 80%);
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #8ec5ff 0%, #c4a3ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.card-glow {
+  position: relative;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.card-glow::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(142, 197, 255, 0.5), rgba(196, 163, 255, 0.5));
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: -1;
+}
+.card-glow:hover::before {
+  opacity: 1;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 2.5rem;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Photo frame — squircle with gradient ring */
+.photo-frame {
+  position: relative;
+  border-radius: 28px;
+  padding: 4px;
+  background: linear-gradient(135deg, #8ec5ff, #c4a3ff);
+  box-shadow:
+    0 30px 60px -20px rgba(142, 197, 255, 0.25),
+    0 20px 40px -25px rgba(196, 163, 255, 0.2);
+}
+.photo-frame img {
+  border-radius: 24px;
+  display: block;
+  background: #0f1419;
+}
+
+/* Floating badge animations */
+@keyframes float-1 {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-10px) rotate(-2deg); }
+}
+@keyframes float-2 {
+  0%, 100% { transform: translateY(0) rotate(2deg); }
+  50% { transform: translateY(-8px) rotate(3deg); }
+}
+@keyframes float-3 {
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50% { transform: translateY(-12px) rotate(0deg); }
+}
+.float-1 { animation: float-1 6s ease-in-out infinite; }
+.float-2 { animation: float-2 7s ease-in-out infinite 0.5s; }
+.float-3 { animation: float-3 5.5s ease-in-out infinite 1s; }
+
+/* Nav glass effect */
+.nav-glass {
+  background: rgba(15, 20, 25, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(47, 57, 77, 0.6);
+}
