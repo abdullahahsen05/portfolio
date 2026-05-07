@@ -88,10 +88,10 @@ export type Project = {
 export const projects: Project[] = [
   {
     name: "HireMind AI",
-    description: "AI-powered HR SaaS dashboard for modern hiring teams",
+    description: "AI-powered HR SaaS dashboard built for a client — full stack with cloud deployment",
     longDescription:
-      "Comprehensive HR analytics dashboard combining candidate insights, hiring metrics, and AI-driven recommendations into a single workspace.",
-    stack: ["Next.js 16", "TypeScript", "Tailwind v4", "Framer Motion", "Recharts"],
+      "Full-stack HR SaaS platform built for a client. Features candidate tracking, hiring pipeline analytics, and AI-driven recommendations. Deployed with Docker on AWS and Vultr with a full CI/CD pipeline and Supabase (PostgreSQL) as the database.",
+    stack: ["Next.js 16", "TypeScript", "Supabase", "PostgreSQL", "Docker", "AWS", "CI/CD", "Tailwind v4", "Recharts"],
     live: "https://hiremind-jade.vercel.app/dashboard",
     github: "https://github.com/abdullahahsen05/hiremind-ai",
     accent: "blue",
